@@ -1,23 +1,12 @@
-const { ethers } = require("hardhat");
-
 const networkConfig = {
+  31337: {
+    name: "localhost",
+  },
+  // Price Feed Address, values can be obtained at https://docs.chain.link/docs/reference-contracts
+  // Default one is ETH/USD contract on Kovan
   4: {
     name: "rinkeby",
-    vrfCoordinatorV2: "0x6168499c0cFfCaCD319c818142124B7A15E857ab",
-    enternceFee: ethers.utils.parseEther("0.01"),
-    gasLane:
-      "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc",
-    subscriptionId: "0",
-    callbackGasLimit: "500000",
-    intervel: "30",
-  },
-  31337: {
-    name: "hardhat",
-    enternceFee: ethers.utils.parseEther("0.01"),
-    gasLane:
-      "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc",
-    callbackGasLimit: "500000",
-    intervel: "30",
+    ethUsdPriceFeed: "0x9326BFA02ADD2366b30bacB125260Af641031331",
   },
 };
 const INITIAL_SUPPLY = "1000000000000000000000000";
